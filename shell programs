@@ -1,0 +1,175 @@
+27.SQUARE OF NUMBER
+#!/bin/sh
+echo "enter a  number"
+read a
+square=$((a*a))
+echo "square of "$a"="$square
+
+
+28.CUBE OF NUMBER
+#!/bin/sh
+echo "enter a  number"
+read a
+cube=$((a*a*a))
+echo "cube of "$a"="$cube
+
+29.AREA OF RECTANGLE
+#!/bin/bash
+echo "enter length"
+read l
+echo "enter base"
+read b
+area=$((l*b))
+echo "area of rectangle"=$area
+
+
+31.SWAP NUMBERS
+#!/bin/bash
+echo "enter first number: "
+read first
+echo "enter second number: "
+read second
+temp=$first
+first=$second
+second=$temp
+echo "after swapping: "
+echo "first number=$first, second number=$second"
+
+
+32.LARGEST NUMBER -3
+#!/bin/bash
+
+echo "Enter three numbers:"
+read num1 num2 num3
+
+if [ $num1 -ge $num2 ] && [ $num1 -ge $num3 ]; then
+    echo "$num1 is the largest number."
+elif [ $num2 -ge $num1 ] && [ $num2 -ge $num3 ]; then
+    echo "$num2 is the largest number."
+else
+    echo "$num3 is the largest number."
+fi
+
+
+33.LEAP YEAR
+#!//bin/bash
+echo "Enter year"
+read year
+if ((year%4==0 && (year%100!=0 || year%400==0)));
+then
+    echo "$year is leap year"
+else
+    echo "$year is not leap year"
+fi
+
+
+34.STUDENT MARKS,PERCENTAGE
+#!/bin/bash
+echo "enter number of students: "
+read n
+a=1
+for((a=1;a<=n;a++))
+do
+        echo "enter student name: "
+        read student
+        echo "english marks"
+        read english
+        echo "maths marks"
+        read maths
+        echo "science marks"
+        read science
+        sum=$(($english+$maths+$science))
+        per=$((100*$sum/300))
+        echo "total=" $sum
+        echo "percentage=" $per
+done
+
+
+35.CALCULAOR
+#!/bin/bash
+echo "enter a number: "
+read a
+echo "enter a number: "
+read b
+sum=$((a+b))
+echo "sum ="$sum
+subtraction=$((a-b))
+echo "subtraction="$subtraction
+mult=$((a*b))
+echo "product="$mult
+div=$((a/b))
+echo "division="$div
+
+
+
+36.PRINT NATURAL NUMS
+echo "Enter no.of integers"
+read n
+i=1
+echo "Natural numbers:"
+for (( i = 1; i<=n; i++ )); 
+do
+    echo "$i"
+done
+
+
+
+37.PALINDROME OR NOT
+#!/bin/bash
+echo "enter a number"
+read n
+sum=0
+temp=$n
+while [ $n -gt 0 ]
+do
+        r=$((n%10))
+        sum=$((r+sum*10))
+        n=$((n/10))
+done
+if [ $temp -eq $sum ]
+then
+        echo "palindrome"
+else
+        echo "not a palindrome"
+fi
+
+
+
+39.BINARY TO DECIMAL
+#!/bin/bash
+echo "enter binary number"
+read n
+function binaryCon(){
+        local i=0
+        local num=0
+        while [ $n != 0 ]
+        do
+                digit=$(( $n % 10))
+                num=$(( num + digit * 2**i))
+                n=$(($n / 10))
+                (( ++i ))
+        done
+        echo "resultant decimal number"
+        echo "$num"
+}
+#function call
+binaryCon
+
+
+
+40.FACTORIAL OF NUM
+#!/bin/bash
+echo "enter a number"
+read num
+fact=1
+while [ $num -gt 1 ]
+do
+        fact=$((fact * num))
+        num=$((num - 1))
+done
+echo "factorial is ="$fact
+
+
+
+
+
